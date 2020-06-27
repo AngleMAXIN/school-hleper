@@ -8,7 +8,7 @@ import (
 func main() {
 	fetch := spider.CreateNewFetch()
 	fetch.Prepare()
-	fetch.Login("201601013109","maxin123")
+	fetch.Login("","")
 
 	result := fetch.PullScore("")
 
