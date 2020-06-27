@@ -17,7 +17,7 @@ func CreateNewFetch() *Fetch {
 	}
 }
 
-func (ft *Fetch) prepare()  {
+func (ft *Fetch) Prepare()  {
 	ft.client.GET(COOKIE_URL,nil,false)
 	ft.client.storeCookie()
 }
@@ -28,11 +28,8 @@ func (ft *Fetch) Login(userID, passWord string) {
 	reqBody.Add("USERNAME",userID)
 	reqBody.Add("PASSWORD",passWord)
 
-	ft.prepare()
 	content := ft.client.POST(LOGIN_URL, strings.NewReader(reqBody.Encode()),false)
 	fmt.Println("-------------\n",string(content))
-
-	//ft.client.storeCookie()storeCookie
 
 }
 
